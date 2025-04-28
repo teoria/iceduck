@@ -279,13 +279,13 @@ _exported_symbols.extend([
 
 
 from duckdb import (
-    connect,
+    #connect,
     default_connection,
     set_default_connection,
 )
 
 _exported_symbols.extend([
-    "connect",
+   # "connect",
     "default_connection",
     "set_default_connection",
 ])
@@ -423,8 +423,13 @@ _exported_symbols.extend([
 
 # Value
 # from .value.constant import (
+ 
+    
 from .iceberg import (
-    create_catalog,
+    connect,
+    DuckDBPyRelationIceberg,
+    DuckDBPyConnectionIceberg,
+    load_catalog,
     create_namespace,
     create_table,
     create_iceberg_table,
@@ -432,33 +437,13 @@ from .iceberg import (
 )
 
 _exported_symbols.extend([
-    "Value",
-    "NullValue",
-    "BooleanValue",
-    "UnsignedBinaryValue",
-    "UnsignedShortValue",
-    "UnsignedIntegerValue",
-    "UnsignedLongValue",
-    "BinaryValue",
-    "ShortValue",
-    "IntegerValue",
-    "LongValue",
-    "HugeIntegerValue",
-    "FloatValue",
-    "DoubleValue",
-    "DecimalValue",
-    "StringValue",
-    "UUIDValue",
-    "BitValue",
-    "BlobValue",
-    "DateValue",
-    "IntervalValue",
-    "TimestampValue",
-    "TimestampSecondValue",
-    "TimestampMilisecondValue",
-    "TimestampNanosecondValue",
-    "TimestampTimeZoneValue",
-    "TimeValue",
-    "TimeTimeZoneValue",
+    "connect", 
+    "DuckDBPyRelationIceberg",
+    "DuckDBPyConnectionIceberg",
+    "load_catalog",
+    "create_namespace",
+    "create_table",
+    "create_iceberg_table",
+    "upsert_iceberg_table",
 ])
 __all__ = _exported_symbols
